@@ -2,7 +2,7 @@
 
 manifest=""
 target="gchat-login-cookie"
-commit=$(git show-ref --abbrev -s)
+commit=$(git log --format="%h" -n 1)
 
 if [ -z "$commit" ]
 then
