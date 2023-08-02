@@ -16,7 +16,7 @@
   "homepage_url": "https://github.com/binfalse/matrix-gchat-bridge-login-cookie-generator",
   "manifest_version": 2,
   "name": "Matrix-GChat Bridge Login Cookie Generator",
-  "version": "1.0",
+  "version": "1.1.5",
   "permissions": [
     "cookies",
     "https://chat.google.com/"
