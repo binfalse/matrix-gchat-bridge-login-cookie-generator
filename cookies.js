@@ -53,10 +53,8 @@ function getAllCookies() {
 }
 
 function createCopyButton(loginCookieArea) {
-
     let button = document.createElement("button");
     button.appendChild(document.createTextNode('copy'));
-
     button.onclick = function () {
         navigator.clipboard.writeText(loginCookieArea.value).then(
             () => {

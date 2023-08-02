@@ -31,7 +31,7 @@ Just click the little new icon in the browser's toolbar after you signed in to t
 
 ## Install
 
-The web extension is available from Mozilla's AddOn directory and the Chrome WebStore.
+The web extension is available from [Mozilla's AddOn directory](https://addons.mozilla.org/en-US/firefox/) and the [Chrome Web Store](https://chrome.google.com/webstore).
 
 ## Build
 

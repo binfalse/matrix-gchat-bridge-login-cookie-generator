@@ -2,15 +2,22 @@
 
 manifest=""
 target="gchat-login-cookie"
+commit=$(git show-ref --abbrev -s)
+
+if [ -z "$commit" ]
+then
+  echo "didn't find current commit id"
+  exit 1
+fi
 
 if [ "$1" = "v2" ]
 then
   manifest="manifest-v2.json"
-  target="$target-v2.zip"
+  target="$target-v2-$commit.zip"
 elif [ "$1" = "v3" ]
 then
   manifest="manifest-v3.json"
-  target="$target-v3.zip"
+  target="$target-v3-$commit.zip"
 else
   echo "please call with 'v2' or 'v3'"
   exit 1
@@ -22,7 +29,11 @@ then
   exit 2
 fi
 
+target="dist/$target"
+
+echo "building $target"
+
 mkdir -p dist
 
 cp "$manifest" manifest.json
-zip -r "dist/$target" cookies* icons manifest.json
+zip -r "$target" cookies* icons manifest.json
