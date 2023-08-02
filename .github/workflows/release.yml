@@ -31,7 +31,7 @@ jobs:
           draft: true
           prerelease: false
       - name: Upload Release Asset manifest v2
-        id: upload-release-asset
+        id: upload-release-asset-v2
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -41,7 +41,7 @@ jobs:
           asset_name: gchat-login-cookie-v2-${{ env.sha_short }}.zip
           asset_content_type: application/zip
       - name: Upload Release Asset manifest v3
-        id: upload-release-asset
+        id: upload-release-asset-v3
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
