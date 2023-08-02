@@ -16,7 +16,7 @@ jobs:
         run: |
           sha_short=$(git rev-parse --short "$GITHUB_SHA")
           echo "sha_short=$sha_short" >> "$GITHUB_ENV"
-          rm manifest.json
+          rm -rf manifest.json
           bash build.sh v2 "$sha_short"
           rm manifest.json
           bash build.sh v3 "$sha_short"
