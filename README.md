@@ -4,6 +4,10 @@
 
 Little web extension for [Firefox]() and [Chromium]() based browsers to generate the `login-cookie` command that [mautrix' Google Chat bridge](https://docs.mau.fi/bridges/python/googlechat/index.html) needs for authentication.
 
+## Install
+
+The web extension is available from ![Firefox Logo](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/73.0.0/firefox/firefox_16x16.png) [Mozilla's AddOn directory](https://addons.mozilla.org/en-US/firefox/addon/gchat-login-cookie-generator/) and the ![Chrome Logo](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/73.0.0/chrome/chrome_16x16.png) [Chrome Web Store](https://chrome.google.com/webstore).
+
 ## Why and How?
 
 Since some time the bridge users need to re-authenticate the Google Chat connection with some `login-cookie` command.
@@ -29,9 +33,6 @@ Thus, I wrote that little web extension to automates the process.
 Just click the little new icon in the browser's toolbar after you signed in to the Google Chat and it will check the Google cookies and create the necessary json object for you \o/
 
 
-## Install
-
-The web extension is available from [Mozilla's AddOn directory](https://addons.mozilla.org/en-US/firefox/) and the [Chrome Web Store](https://chrome.google.com/webstore).
 
 ## Build
 

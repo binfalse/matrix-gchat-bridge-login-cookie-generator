@@ -13,7 +13,7 @@
     "48": "icons/cookie.png",
     "96": "icons/cookie@2x.png"
   },
-  "homepage_url": "https://github.com/mdn/webextensions-examples/tree/master/list-cookies",
+  "homepage_url": "https://github.com/binfalse/matrix-gchat-bridge-login-cookie-generator",
   "manifest_version": 2,
   "name": "Matrix-GChat Bridge Login Cookie Generator",
   "version": "1.0",
