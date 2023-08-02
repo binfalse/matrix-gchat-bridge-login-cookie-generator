@@ -1,0 +1,52 @@
+on:
+  push:
+    tags:
+    - 'v*'
+
+name: Create a release with assets
+
+jobs:
+  build:
+    name: Create a release with assets
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Build artifacts
+        run: |
+          sha_short=$(git rev-parse --short "$GITHUB_SHA")
+          echo "sha_short=$sha_short" >> "$GITHUB_ENV"
+          rm manifest.json
+          bash build.sh v2 "$sha_short"
+          rm manifest.json
+          bash build.sh v3 "$sha_short"
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: true
+          prerelease: false
+      - name: Upload Release Asset manifest v2
+        id: upload-release-asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./dist/gchat-login-cookie-v2-${{ env.sha_short }}.zip
+          asset_name: gchat-login-cookie-v2-${{ env.sha_short }}.zip
+          asset_content_type: application/zip
+      - name: Upload Release Asset manifest v3
+        id: upload-release-asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./dist/gchat-login-cookie-v3-${{ env.sha_short }}.zip
+          asset_name: gchat-login-cookie-v3-${{ env.sha_short }}.zip
+          asset_content_type: application/zip

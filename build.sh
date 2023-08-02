@@ -2,7 +2,13 @@
 
 manifest=""
 target="gchat-login-cookie"
-commit=$(git log --format="%h" -n 1)
+
+if [ -n "$2" ]
+then
+  commit="$2"
+else
+  commit=$(git log --format="%h" -n 1)
+fi
 
 if [ -z "$commit" ]
 then
@@ -37,3 +43,4 @@ mkdir -p dist
 
 cp "$manifest" manifest.json
 zip -r "$target" cookies* icons manifest.json
+rm manifest.json
