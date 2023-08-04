@@ -6,7 +6,15 @@ Little web extension for [Firefox]() and [Chromium]() based browsers to generate
 
 ## Install
 
-The web extension is available from ![Firefox Logo](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/73.0.0/firefox/firefox_16x16.png) [Mozilla's AddOn directory](https://addons.mozilla.org/en-US/firefox/addon/gchat-login-cookie-generator/) and the ![Chrome Logo](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/73.0.0/chrome/chrome_16x16.png) [Chrome Web Store](https://chrome.google.com/webstore).
+The web extension is available from ![Firefox Logo](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/73.0.0/firefox/firefox_16x16.png) [Mozilla's AddOn directory](https://addons.mozilla.org/en-US/firefox/addon/gchat-login-cookie-generator/) and the ![Chrome Logo](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/73.0.0/chrome/chrome_16x16.png) [Chrome Web Store](https://chrome.google.com/webstore/detail/matrix-gchat-bridge-login/mofmfbkepponmdchhamalbcldoajbmho).
+
+## Usage
+
+1. Install the web extension for your browser
+2. login to Google Chat
+3. click the extension's icon and then click the copy button in the popup
+4. paste the contents into the matrix conversation with the Google Chat bridge
+
 
 ## Why and How?
 
