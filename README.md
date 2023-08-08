@@ -3,6 +3,7 @@
 ![Matrix-GChat Bridge Login Cookie Generator Icon](google-login-cookie-icon.png)
 
 Little web extension for [Firefox]() and [Chromium]() based browsers to generate the `login-cookie` command that [mautrix' Google Chat bridge](https://docs.mau.fi/bridges/python/googlechat/index.html) needs for authentication.
+Check [GChat login-cookie generator for mautrix' puppeting bridge @ binfalse](https://binfalse.de/2023/08/08/gchat-login-cookie-generator-for-mautrix-puppeting-bridge/) for more information.
 
 ## Install
 
