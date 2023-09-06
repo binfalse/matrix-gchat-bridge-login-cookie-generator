@@ -1,3 +1,7 @@
+function reportMissingField(name, value) {
+    return value?.length > 0 ? "" : name + ", ";
+}
+
 class LoginCookie {
     compass = undefined;
     ssid = undefined;
@@ -31,6 +35,15 @@ class LoginCookie {
             this.sid?.length > 0 &&
             this.osid?.length > 0 &&
             this.hsid?.length > 0
+    }
+
+    missingFields() {
+        return ("Missing fields: "
+            + reportMissingField('compass', this.compass)
+            + reportMissingField('ssid', this.ssid)
+            + reportMissingField('sid', this.sid)
+            + reportMissingField('osid', this.osid)
+            + reportMissingField('hsid', this.hsid)).replace(/, $/,'');
     }
 
     getCookie() {
@@ -93,8 +106,11 @@ function setupPopup() {
             panel.appendChild(loginCookieArea)
             panel.appendChild(button)
         } else {
+            let boldNode = document.createElement('strong');
             let errorParagraph = document.createElement('p');
-            errorParagraph.appendChild(document.createTextNode("Could not find corresponding cookies"))
+            boldNode.appendChild(document.createTextNode(loginCookie.missingFields()));
+            errorParagraph.appendChild(document.createTextNode("Could not find all necessary cookies. "))
+            errorParagraph.appendChild(boldNode);
             panel.appendChild(errorParagraph)
         }
     });

@@ -15,7 +15,7 @@
   "homepage_url": "https://binfalse.de/2023/08/08/gchat-login-cookie-generator-for-mautrix-puppeting-bridge/",
   "manifest_version": 3,
   "name": "Matrix-GChat Bridge Login Cookie Generator",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "permissions": [
     "cookies"
   ],
